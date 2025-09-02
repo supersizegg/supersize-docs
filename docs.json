@@ -89,8 +89,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/slime.png",
+    "dark": "/logo/slime.png"
   },
   "navbar": {
     "links": [
