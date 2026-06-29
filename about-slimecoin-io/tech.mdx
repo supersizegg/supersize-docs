@@ -1,0 +1,36 @@
+---
+title: "Tech"
+description: "The technical foundation behind Slimecoin.io."
+---
+
+Slimecoin.io is built on Solana programs designed for low-latency gameplay through MagicBlock ephemeral rollups.
+
+## The stack
+
+| Layer | Role |
+| --- | --- |
+| Solana | Owns canonical program IDs, PDAs, token accounts, and committed state |
+| MagicBlock ephemeral rollups | Run delegated game and payout state with low latency |
+| Supersize Vault | Holds balance accounting, player profiles, rewards, and fee ledgers |
+| Supersize Matchmaking | Pairs scores and shared seeds, validates queues, and calls settlement |
+| Slimecoin Games | Stores game sessions, tick logic, scoring, randomness, and timeout handling |
+
+## Why games are on-chain
+
+The game program owns the rules that matter for settlement:
+
+- session ownership
+- score calculation
+- random seed handling
+- run IDs and timeout windows
+- opponent linking for shared-seed games
+- reset and payout conditions
+
+The frontend can render, predict, and animate, but settlement follows the on-chain session.
+
+## Where to go deeper
+
+- [Architecture](/protocol/architecture)
+- [Matchmaking](/protocol/matchmaking)
+- [Accounting and security](/protocol/accounting-security)
+- [Program reference](/reference/programs)

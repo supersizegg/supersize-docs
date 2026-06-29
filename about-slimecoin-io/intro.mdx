@@ -1,0 +1,31 @@
+---
+title: "Intro"
+description: "What Slimecoin.io is and how the player-facing app maps to the protocol."
+---
+
+Slimecoin.io is the player-facing app for the Slimecoin protocol. It turns on-chain game sessions, wallet balances, matchmaking queues, rewards, and leaderboards into a fast arcade experience.
+
+## What players see
+
+Players see:
+
+- a wallet-connected arcade lobby
+- free-play and paid game modes
+- USDC, SLIME, and Slimecoin balances
+- leagues, quests, tournament surfaces, and profile progression
+- result overlays that explain winnings, opponent outcomes, and claimable rewards
+
+## What the protocol does underneath
+
+Behind the UI, each game session is backed by protocol accounts:
+
+1. The vault profile stores the player's balances and session authority.
+2. The game program creates or resumes a game session PDA.
+3. Matchmaking either pairs the player or queues their score/seed.
+4. The vault settles buy-ins, winnings, fees, Slimecoin, SLIME, leagues, and payouts.
+
+## Why it matters
+
+The player experience is meant to feel simple, but the settlement model remains explicit. A match result is not just an app screen; it is the result of game-owned session state, matchmaking-owned queue state, and vault-owned balance accounting.
+
+Read the [player quickstart](/quickstart) for the end-to-end flow or the [architecture page](/protocol/architecture) for the program-level design.
