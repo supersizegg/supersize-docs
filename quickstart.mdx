@@ -1,80 +1,85 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: "Player quickstart"
+description: "How a Slimecoin session works from wallet setup to rewards."
 ---
 
-## Get started in three steps
+This page explains the player flow without hiding the protocol mechanics.
 
-Get your documentation site running locally and make your first customization.
+## 1. Create a profile
 
-### Step 1: Set up your local environment
+Your wallet owns a **Vault profile** PDA. The profile stores your primary balances:
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+- USDC balance
+- SLIME balance
+- Slimecoin balance
+- lifetime buy-ins, winnings, and platform earnings
+- your session authority, which lets gameplay use a fast session signer without taking custody of your wallet
 
-### Step 2: Deploy your changes
+Your profile is paired with a **PlayerPayouts** PDA for each rollup region. Payouts, pending rewards, and locked buy-ins live there before being claimed into your profile.
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+## 2. Choose a region
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+The protocol supports three allowed payout validators:
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+| Region | Purpose |
+| --- | --- |
+| Europe | Regional rollup and player payout domain |
+| America | Regional rollup and player payout domain |
+| Asia | Regional rollup and player payout domain |
 
-### Step 3: Go live
+The validator determines which rollup ledger accounts for your game, fees, SLIME collateral, weekly quests, and claimable rewards.
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+## 3. Fund or earn playable balances
 
-## Next steps
+There are three ways balances enter the player experience:
 
-Now that you have your docs running, explore these key features:
+| Action | Result |
+| --- | --- |
+| Deposit USDC | Increases your vault USDC balance |
+| Swap USDC to SLIME | Mints SLIME at 1 USDC = 1,000 SLIME, within protocol limits |
+| Claim SLIME | Produces free-play SLIME over time, capped by your Slime Rush level and backed by rollup capacity |
 
-<CardGroup cols={2}>
+## 4. Join a game
 
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
+Every game start does three things:
 
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
+1. Reserves the buy-in in the vault.
+2. Creates or resumes an on-chain game session.
+3. Enters matchmaking, either by matching you immediately or creating a waiting placeholder.
 
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
+Paid queues use USDC or SLIME depending on the selected mode. Free queues use 0 buy-in but still run through the same session and score validation paths.
 
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
+## 5. Finish, settle, and claim
 
-</CardGroup>
+When the game ends, the game program submits or resolves the score through matchmaking. The vault then:
 
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+- releases locked buy-ins
+- credits the winner payout, or refunds both players on a draw
+- credits Slimecoin rewards for paid USD matches
+- records fees, weekly volume, practice wins, and league accounting
+
+Rewards first land in your regional `PlayerPayouts` account. Claiming moves `claimable_usd`, `claimable_slime`, and `claimable_slimecoin` into your profile.
+
+## Typical lifecycle
+
+```mermaid
+sequenceDiagram
+  participant W as Wallet
+  participant V as Vault
+  participant G as Game
+  participant M as Matchmaking
+
+  W->>V: Create profile and payouts
+  W->>V: Deposit USDC or claim SLIME
+  W->>G: Join game
+  G->>V: Reserve buy-in
+  G->>M: Start or enter queue
+  W->>G: Play on-chain session
+  G->>M: Submit or resolve score
+  M->>V: Settle outcome
+  W->>V: Claim payouts
+```
+
+<Tip>
+  You never send assets to an off-chain game server. The vault holds token accounts through PDAs, and game sessions are program-owned accounts.
+</Tip>

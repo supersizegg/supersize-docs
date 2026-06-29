@@ -1,18 +1,15 @@
-# Mintlify Starter Kit
+# Slimecoin Protocol Docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+This repository contains the public documentation for the Slimecoin protocol.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+The docs are written in MDX and configured through `docs.json`. They cover:
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+- the non-custodial Supersize Vault
+- the Supersize Matchmaking queue program
+- the on-chain game library
+- Slimecoin emissions, SLIME, leagues, tournaments, and player rewards
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
-
-## Development
+## Local preview
 
 Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
 
@@ -28,17 +25,6 @@ mint dev
 
 View your local preview at `http://localhost:3000`.
 
-## Publishing changes
+## Publishing
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
-- [Mintlify community](https://mintlify.com/community)
+Push changes to the default branch used by the docs deployment.

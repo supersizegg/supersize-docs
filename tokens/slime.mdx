@@ -1,0 +1,79 @@
+---
+title: "SLIME"
+description: "The USDC-backed free-to-play currency used for free and low-friction gameplay."
+---
+
+SLIME is the protocol's free-to-play currency. It is separate from Slimecoin.
+
+| Token | Purpose |
+| --- | --- |
+| **Slimecoin** | Play-to-mine reward token |
+| **SLIME** | USDC-backed game currency used for free-play and SLIME queues |
+
+## Backing model
+
+The rollup ledger defines:
+
+```text
+1 USDC = 1,000 SLIME
+```
+
+SLIME supply is bounded by rollup accounting:
+
+```text
+max SLIME supply = USDC collateral * 1,000 + collected SLIME fees
+```
+
+This means the protocol can mint or credit SLIME only while the rollup has enough accounting capacity.
+
+## Ways to get SLIME
+
+| Method | How it works |
+| --- | --- |
+| Registration bonus | New profiles can receive a configured SLIME bonus |
+| USDC-to-SLIME swap | Players swap profile USDC into SLIME at 1:1,000 |
+| Claim SLIME | Players produce SLIME over time based on Slimecoin balance and boosts |
+| SLIME match winnings | Winners of SLIME queues receive claimable SLIME |
+
+## Swapping USDC to SLIME
+
+The vault supports a small USDC-to-SLIME swap window. Current protocol bounds are:
+
+| Bound | Amount |
+| --- | ---: |
+| Minimum swap | $0.01 |
+| Maximum swap | $1.00 |
+| Rate | 1 USDC = 1,000 SLIME |
+
+The swap debits `Profile.usd_balance`, increases rollup SLIME collateral and supply accounting, and credits `Profile.slime_balance`.
+
+## Claiming SLIME over time
+
+Players can claim SLIME production for elapsed hours, up to 24 hours per claim. The rate depends on:
+
+- Slimecoin balance
+- current Slime Rush boost multiplier
+- optional SKR multiplier
+- production cap for the player's current Slime Rush level
+- remaining rollup SLIME capacity
+
+The vault enforces the cap using the player's total SLIME inventory:
+
+```text
+inventory = profile SLIME + claimable SLIME + locked SLIME
+```
+
+If inventory is already at the current production cap, new SLIME production is capped at zero until the player spends or raises the cap.
+
+## SLIME in games
+
+SLIME queues are useful for free-to-play competition because the same on-chain game and matchmaking logic can run without requiring a USDC buy-in. A SLIME match:
+
+- reserves SLIME instead of USDC
+- pays the winner in SLIME
+- records SLIME fees to the rollup ledger
+- does not mine Slimecoin through the paid USD reward path
+
+<Tip>
+  SLIME keeps casual play liquid while USDC matches remain the main path for prize payouts, league fee generation, and Slimecoin mining.
+</Tip>

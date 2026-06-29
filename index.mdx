@@ -1,97 +1,71 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Slimecoin protocol"
+description: "The end-to-end protocol behind Slimecoin, SLIME, on-chain games, matchmaking, and leagues."
 ---
 
-## Setting up
+Slimecoin is a competitive gaming protocol built from three on-chain systems:
 
-Get your documentation site up and running in minutes.
+- **Supersize Vault** keeps player balances non-custodial, accounts for USDC, SLIME, Slimecoin, fees, leagues, and tournaments.
+- **Supersize Matchmaking** pairs players by game, region, mint, and buy-in, then calls the vault to settle outcomes.
+- **Slimecoin Games** is a library of fully on-chain games whose session state, scoring, seeds, and settlement hooks are written into Solana accounts.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+The design goal is simple: players get fast arcade games with real, transparent settlement; investors and builders get an inspectable protocol where balances, fees, emissions, and reward pools are explicit on-chain state.
 
-## Make it yours
+```mermaid
+flowchart LR
+  Player["Player wallet"] --> Profile["Vault profile"]
+  Profile --> Vault["supersize-vault"]
+  Vault --> Queue["supersize-matchmaking"]
+  Queue --> Game["slimecoin-games session"]
+  Game --> Queue
+  Queue --> Vault
+  Vault --> Balances["Claimable USDC, SLIME, Slimecoin"]
+```
 
-Design a docs site that looks great and empowers your users.
+## The short version
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Start playing" icon="gamepad" href="/quickstart">
+    Learn what happens when you create a profile, deposit, join a game, and claim rewards.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Protocol architecture" icon="network" href="/protocol/architecture">
+    Understand how the vault, matchmaking program, and game program fit together.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Slimecoin" icon="coins" href="/tokens/slimecoin">
+    See how the play-to-mine token is emitted per USD of gameplay and how halvings work.
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Game library" icon="joystick" href="/games/library">
+    Browse every on-chain game, its game ID, mode, scoring model, and settlement path.
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Core assets
 
-Everything you need to create world-class documentation.
+| Asset | Role | Where it lives |
+| --- | --- | --- |
+| **USDC** | Deposited value, paid-entry buy-ins, withdrawals, league prizes | Player profile and vault token account |
+| **SLIME** | Free-to-play currency backed by USDC collateral | Player profile and rollup ledger supply/collateral accounting |
+| **Slimecoin** | Play-to-mine reward token | Player profile and payout accounts |
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+## How a paid match settles
 
-## Need inspiration?
+For a standard paid match, both players lock the same buy-in. The higher score wins the pot less the platform fee. With the current product fee model of 10% of the pot, a $1 vs $1 match settles as:
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+```mermaid
+pie showData
+  title "$2.00 pot with 10% fee"
+  "Winner payout: $1.80" : 90
+  "SLIME collateral: $0.10" : 5
+  "Weekly leagues pool: $0.06" : 3
+  "Protocol earnings: $0.04" : 2
+```
+
+The fee split is not a marketing abstraction. USD fees are recorded in each rollup ledger; half of those fees increase SLIME collateral, then accounting allocates 60% of the remaining half to weekly leagues and leaves 40% of that half claimable by the protocol.
+
+## Source of truth
+
+These docs are grounded in the current protocol source:
+
+- `supersize-vault/programs/supersize-vault/src`
+- `supersize-matchmaking/programs/supersize-matchmaking/src`
+- `slimecoin-games/programs/slimecoin-games/src`
