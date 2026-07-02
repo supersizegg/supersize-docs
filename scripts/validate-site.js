@@ -24,7 +24,6 @@ export const requiredFiles = [
   "src/app.js",
   "src/content.js",
   "src/styles.css",
-  "favicon.svg",
   "logo/slime.png",
   "logo/slimecoinio.png",
 ];
@@ -39,6 +38,13 @@ export function validateSite(rootDirectory = root) {
   for (const page of pages) {
     const routeFile = page.slug === "/" ? "index.html" : `${page.slug.slice(1)}index.html`;
     if (!exists(rootDirectory, routeFile)) failures.push(`Missing route entrypoint: ${routeFile}`);
+    const routePath = path.join(rootDirectory, routeFile);
+    if (fs.existsSync(routePath)) {
+      const routeHtml = fs.readFileSync(routePath, "utf8");
+      if (!routeHtml.includes('rel="icon" type="image/png" href="/logo/slime.png"')) {
+        failures.push(`Route does not use Slimecoin logo favicon: ${routeFile}`);
+      }
+    }
     if (!page.title || !page.description || !page.content) {
       failures.push(`Incomplete page metadata: ${page.slug}`);
     }

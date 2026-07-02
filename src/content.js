@@ -399,7 +399,7 @@ export const pages = [
     navTitle: "Fairness & Security",
     title: "Fairness & Security",
     description:
-      "How Slimecoin makes gameplay, funds, and results transparent and verifiable.",
+      "Slimecoin makes gameplay, funds, and results transparent and verifiable.",
     eyebrow: "Trust model",
     content: `
       <p>Slimecoin is built so players do not have to trust a private game server to decide moves, scores, payouts, or balances.</p>

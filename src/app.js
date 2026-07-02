@@ -66,7 +66,7 @@ function render(page) {
           <nav class="mobile-nav" aria-label="Mobile docs navigation">
             ${navMarkup(page.slug)}
           </nav>
-          <a class="topbar-button" href="/games/" data-doc-link>Games</a>
+          <a class="topbar-button" href="https://slimecoin.io/">Go to Slimecoin.io</a>
         </header>
 
         <main class="content-grid">

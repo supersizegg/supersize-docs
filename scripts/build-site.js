@@ -9,7 +9,6 @@ const outputDirectory = path.join(root, "public");
 
 const staticEntries = [
   "index.html",
-  "favicon.svg",
   "games",
   "slime",
   "slimecoin",
