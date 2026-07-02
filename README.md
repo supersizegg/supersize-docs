@@ -1,31 +1,34 @@
 # Slimecoin Docs
 
-Documentation for Slimecoin.io and the Slimecoin protocol, built with Mintlify.
+Documentation for Slimecoin.io and the Slimecoin protocol.
 
-The docs cover:
+This repository is a first-party static docs site. It does not depend on Mintlify,
+MDX, or a build service. The docs cover:
 
 - Slimecoin.io as the player-facing game platform
 - the non-custodial Supersize Vault
 - the Supersize Matchmaking queue program
 - the on-chain game library
-- Slimecoin emissions, SLIME, leagues, tournaments, and player rewards
+- Slimecoin emissions, SLIME, leagues, and player rewards
 
 ## Local preview
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview documentation changes locally:
-
 ```bash
-npm i -g mint
+npm start
 ```
 
-Run the preview from this directory:
+Then open `http://127.0.0.1:3000`.
+
+## Validation
 
 ```bash
-mint dev
+npm run build
 ```
 
-View the local site at `http://localhost:3000`.
+The build script validates the static routes, required assets, and first-party
+content registry.
 
 ## Publishing
 
-Push changes to the default branch used by the docs deployment.
+Deploy this directory as a static site. `index.html` is the root page, and each
+docs route has its own `index.html` entrypoint for direct links.
