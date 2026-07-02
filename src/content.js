@@ -8,6 +8,14 @@ export const pages = [
     eyebrow: "Protocol overview",
     heroLogo: false,
     content: `
+      <p>Slimecoin is a competitive gaming protocol comprised of three on-chain programs:</p>
+
+      <ul>
+        <li><strong>Slimecoin Vault</strong> is where assets are stored for use in gameplay. It is non-custodial, so funds never leave the player's control.</li>
+        <li><strong>Slimecoin Matchmaking</strong> pairs players by game and buy-in and ensures they compete under identical game conditions so the winner is determined by skill alone.</li>
+        <li><strong>Slimecoin Games</strong> is a library of fully on-chain games.</li>
+      </ul>
+
       <h2>Core assets</h2>
 
       <table>
@@ -32,15 +40,7 @@ export const pages = [
           </tr>
         </tbody>
       </table>
-
-      <p>Slimecoin is a competitive gaming protocol comprised of three on-chain programs:</p>
-
-      <ul>
-        <li><strong>Slimecoin Vault</strong> is where assets are stored for use in gameplay. It is non-custodial, so funds never leave the player's control.</li>
-        <li><strong>Slimecoin Matchmaking</strong> pairs players by game and buy-in and ensures they compete under identical game conditions so the winner is determined by skill alone.</li>
-        <li><strong>Slimecoin Games</strong> is a library of fully on-chain games.</li>
-      </ul>
-
+      
       <h2>How a paid match settles</h2>
 
       <p>For a standard paid match, both players lock the same buy-in. The higher score wins the pot less the platform fee. With the current product fee model of 10% of the pot, a $1 duel settles as:</p>
