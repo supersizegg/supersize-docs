@@ -20,7 +20,7 @@ export const pages = [
         <tbody>
           <tr>
             <td><strong>USDC</strong></td>
-            <td>Core asset powering paid games and payoutss/td>
+            <td>Core asset powering paid games and payouts</td>
           </tr>
           <tr>
             <td><strong>SLIME</strong></td>

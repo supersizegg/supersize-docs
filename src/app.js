@@ -19,15 +19,6 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
-function slugify(value) {
-  return value
-    .toLowerCase()
-    .trim()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
 function navMarkup(currentSlug) {
   return pages
     .map((page) => {
@@ -81,46 +72,23 @@ function render(page) {
               ${page.content}
             </div>
           </article>
-
-          <aside class="toc-shell" aria-label="On this page">
-            <div class="toc-card">
-              <p>On this page</p>
-              <nav id="toc"></nav>
-            </div>
-          </aside>
         </main>
       </div>
     </div>
   `;
 
-  buildToc();
+  wrapTables();
 }
 
-function buildToc() {
-  const article = document.querySelector(".doc-content");
-  const toc = document.querySelector("#toc");
-  const headings = [...article.querySelectorAll("h2, h3")];
+function wrapTables() {
+  const tables = document.querySelectorAll(".doc-content table");
 
-  if (!headings.length) {
-    toc.innerHTML = "";
-    return;
+  for (const table of tables) {
+    const frame = document.createElement("div");
+    frame.className = "table-frame";
+    table.before(frame);
+    frame.append(table);
   }
-
-  const usedIds = new Set();
-  const links = headings.map((heading) => {
-    let id = heading.id || slugify(heading.textContent);
-    let suffix = 2;
-    while (usedIds.has(id)) {
-      id = `${slugify(heading.textContent)}-${suffix}`;
-      suffix += 1;
-    }
-    usedIds.add(id);
-    heading.id = id;
-    const level = heading.tagName === "H3" ? "toc-depth-2" : "";
-    return `<a class="${level}" href="#${id}">${escapeHtml(heading.textContent)}</a>`;
-  });
-
-  toc.innerHTML = links.join("");
 }
 
 function renderCurrentRoute() {
