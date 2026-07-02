@@ -17,18 +17,29 @@ MDX, or a build service. The docs cover:
 npm start
 ```
 
-Then open `http://127.0.0.1:3000`.
+This builds the deployable static site into `public/` and serves that output at
+`http://127.0.0.1:3000`.
 
 ## Validation
 
 ```bash
-npm run build
+npm run check
 ```
 
-The build script validates the static routes, required assets, and first-party
-content registry.
+The check script validates the static routes, required assets, and first-party
+content registry without writing the deployment output.
+
+## Vercel
+
+Vercel is configured through `vercel.json`:
+
+- build command: `npm run build`
+- output directory: `public`
+
+The `public/` directory is generated during the build and intentionally ignored
+by git.
 
 ## Publishing
 
-Deploy this directory as a static site. `index.html` is the root page, and each
-docs route has its own `index.html` entrypoint for direct links.
+Deploy this directory as a Vercel static site. `index.html` is the root page,
+and each docs route has its own `index.html` entrypoint for direct links.

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/about-slimecoin-io/games",
+      "destination": "/games/",
+      "permanent": true
+    },
+    {
+      "source": "/about-slimecoin-io/games/",
+      "destination": "/games/",
+      "permanent": true
+    },
+    {
+      "source": "/tokens/slime",
+      "destination": "/slime/",
+      "permanent": true
+    },
+    {
+      "source": "/tokens/slime/",
+      "destination": "/slime/",
+      "permanent": true
+    },
+    {
+      "source": "/tokens/slimecoin",
+      "destination": "/slimecoin/",
+      "permanent": true
+    },
+    {
+      "source": "/tokens/slimecoin/",
+      "destination": "/slimecoin/",
+      "permanent": true
+    },
+    {
+      "source": "/rewards/leagues",
+      "destination": "/leagues/",
+      "permanent": true
+    },
+    {
+      "source": "/rewards/leagues/",
+      "destination": "/leagues/",
+      "permanent": true
+    },
+    {
+      "source": "/about-slimecoin-io/tech",
+      "destination": "/fairness-security/",
+      "permanent": true
+    },
+    {
+      "source": "/about-slimecoin-io/tech/",
+      "destination": "/fairness-security/",
+      "permanent": true
+    },
+    {
+      "source": "/quickstart",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/quickstart/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "python3 -m http.server 3000 --bind 127.0.0.1",
+    "start": "npm run build && python3 -m http.server 3000 --bind 127.0.0.1 --directory public",
     "dev": "python3 -m http.server 3000 --bind 127.0.0.1",
-    "build": "node scripts/validate-site.js",
+    "build": "node scripts/build-site.js",
     "check": "node scripts/validate-site.js"
   }
 }
