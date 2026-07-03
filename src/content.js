@@ -2,13 +2,13 @@ export const pages = [
   {
     slug: "/",
     navTitle: "Overview",
-    title: "Overview",
+    title: "Slimecoin",
     description:
-      "An overview of Slimecoin.io, the underlying Slimecoin protocol, and associated assets.",
+      "A fully on-chain competitive gaming protocol.",
     eyebrow: "Protocol overview",
     heroLogo: false,
     content: `
-      <p>Slimecoin is a competitive gaming protocol comprised of three on-chain programs:</p>
+      <p>The Slimecoin protocol is comprised of three programs:</p>
 
       <ul>
         <li><strong>Slimecoin Vault</strong> is where assets are stored for use in gameplay. It is non-custodial, so funds never leave the player's control.</li>
