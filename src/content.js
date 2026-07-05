@@ -239,9 +239,6 @@ export const pages = [
     content: `
       <h2>Supply</h2>
 
-      <p>There is a total mineable Slimecoin supply of <strong>500,000,000 Slimecoin</strong>.
-      As players mine Slimecoin, the protocol moves through halving levels.</p>
-
       <h2>How mining works</h2>
 
       <p>In a paid USD match, both players can receive Slimecoin:</p>
@@ -253,7 +250,7 @@ export const pages = [
         <li>both rewards halve as the remaining mineable supply crosses halving thresholds</li>
       </ul>
 
-      <p>At halving level 0:</p>
+      <p>As players mine Slimecoin, the protocol moves through halving levels. At halving level 0:</p>
 
       <table>
         <thead>
@@ -278,7 +275,7 @@ export const pages = [
 
       <h2>Halving schedule</h2>
 
-      <p>The halving level is based on remaining treasury holdings as a percentage of the total 500M supply. Level 0 applies while more than 50% remains. Once treasury holdings are at or below 50%, the level increments. Each further halving threshold halves the emission rate again.</p>
+      <p>The halving level is based on remaining treasury holdings as a percentage of the total supply. Level 0 applies while more than 50% remains. Once treasury holdings are at or below 50%, the level increments. Each further halving threshold halves the emission rate again.</p>
 
       <table>
         <thead>
@@ -290,12 +287,12 @@ export const pages = [
           </tr>
         </thead>
         <tbody>
-          <tr><td>0</td><td>More than 250,000,000</td><td>50</td><td>5</td></tr>
-          <tr><td>1</td><td>250,000,000 or less</td><td>25</td><td>2.5</td></tr>
-          <tr><td>2</td><td>125,000,000 or less</td><td>12.5</td><td>1.25</td></tr>
-          <tr><td>3</td><td>62,500,000 or less</td><td>6.25</td><td>0.625</td></tr>
-          <tr><td>4</td><td>31,250,000 or less</td><td>3.125</td><td>0.3125</td></tr>
-          <tr><td>5</td><td>15,625,000 or less</td><td>1.5625</td><td>0.15625</td></tr>
+          <tr><td>0</td><td>More than 50%</td><td>50</td><td>5</td></tr>
+          <tr><td>1</td><td>50% or less</td><td>25</td><td>2.5</td></tr>
+          <tr><td>2</td><td>25% or less</td><td>12.5</td><td>1.25</td></tr>
+          <tr><td>3</td><td>12.5% or less</td><td>6.25</td><td>0.625</td></tr>
+          <tr><td>4</td><td>6.25% or less</td><td>3.125</td><td>0.3125</td></tr>
+          <tr><td>5</td><td>3.125% or less</td><td>1.5625</td><td>0.15625</td></tr>
         </tbody>
       </table>
 
