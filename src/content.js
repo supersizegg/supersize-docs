@@ -237,8 +237,6 @@ export const pages = [
       "The play-to-mine token emitted from real USDC gameplay volume with supply-linked halvings.",
     eyebrow: "Play-to-mine token",
     content: `
-      <h2>Supply</h2>
-
       <h2>How mining works</h2>
 
       <p>In a paid USD match, both players can receive Slimecoin:</p>
