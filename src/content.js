@@ -122,9 +122,6 @@ export const pages = [
     content: `
       <pre><code>1 USDC = 1,000 SLIME</code></pre>
 
-      <h2>Backing model</h2>
-      <p>Slime is backed by USDC fees accrued by the protocol.</p>
-
       <h2>How to get Slime</h2>
       <p>Slime is designed as a gamified rakeback system. It gives casual players a way to keep playing while scaling up rewards for higher-volume players.</p>
       <table>
@@ -331,7 +328,7 @@ export const pages = [
     slug: "/leagues/",
     navTitle: "Leagues",
     title: "Leagues",
-    description: "A permanent leaderboard with a weekly prize pool funded by protocol fees.",
+    description: "A permanent leaderboard with a weekly prize pool.",
     eyebrow: "Weekly competition",
     content: `
 
@@ -339,7 +336,7 @@ export const pages = [
       <p>Every week players can claim a USDC prize proportional to their Slimecoin holdings. For example, if a player holds 10% of the active Slimecoin supply, they are entitled to 10% of the prize pool.</p>      
 
       <h2>Ranks</h2>
-      <p>Players rank by Slimecoin balance in the public leaderboard. The app maps ranks into tiers:</p>
+      <p>Players rank by Slimecoin balance in the public leaderboard. At the start of each week players earn a Slime boost based on their rank. The app maps ranks into tiers:</p>
       <table>
         <thead>
           <tr>
