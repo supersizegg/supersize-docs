@@ -51,12 +51,10 @@ export const pages = [
           <span>Winner payout and fee destinations as a share of the total pot.</span>
         </div>
         <div class="pie-layout">
-          <div class="pot-pie" role="img" aria-label="Winner payout 90%, SLIME collateral 5%, weekly leagues pool 3%, protocol earnings 2%"></div>
+          <div class="pot-pie" role="img" aria-label="Winner payout 90%, protocol earnings 10%"></div>
           <div class="pie-legend">
             <div><span class="legend-swatch winner"></span><strong>Winner payout: $1.80</strong><em>90%</em></div>
-            <div><span class="legend-swatch collateral"></span><strong>SLIME collateral: $0.10</strong><em>5%</em></div>
-            <div><span class="legend-swatch leagues"></span><strong>Weekly leagues pool: $0.06</strong><em>3%</em></div>
-            <div><span class="legend-swatch protocol"></span><strong>Protocol earnings: $0.04</strong><em>2%</em></div>
+            <div><span class="legend-swatch protocol"></span><strong>Protocol earnings: $0.20</strong></div>
           </div>
         </div>
       </div>
@@ -106,7 +104,6 @@ export const pages = [
         <li>Farm Wars</li>
         <li>Slime Solitaire</li>
         <li>Block Puzzle</li>
-        <li>Blob Battle</li>
         <li>2048</li>
         <li>Bubble Shooter</li>
         <li>Match 3</li>
@@ -157,7 +154,6 @@ export const pages = [
         <li>Slimecoin balance</li>
         <li>current Slime Rush boost multiplier</li>
         <li>production cap for the player's current Slime Rush level</li>
-        <li>remaining on-chain Slime capacity given current collateral</li>
       </ul>
 
       <p>The vault enforces the cap using the player's total SLIME inventory:</p>
@@ -326,10 +322,6 @@ export const pages = [
         </svg>
       </div>
 
-      <h2>Why per-USD emissions matter</h2>
-
-      <p>Slimecoin rewards are tied to actual gameplay buy-ins. This makes emissions volume-based. Halvings slow issuance as the mineable treasury runs down.</p>
-
       <h2>Practice quest mining</h2>
 
       <p>Players can claim Slimecoin for each of their first 10 practice wins, receiving the lower per-USD Slimecoin rate for each win. This gives new players a path to touch Slimecoin before entering USDC matches.</p>
@@ -346,28 +338,6 @@ export const pages = [
       <h2>Weekly USDC payouts</h2>
       <p>Every week players can claim a USDC prize proportional to their Slimecoin holdings. For example, if a player holds 10% of the active Slimecoin supply, they are entitled to 10% of the prize pool.</p>      
 
-      <h2>Funding the pool</h2>
-
-      <p>The weekly leagues pool is funded from protocol fee accounting.</p>
-      <p>As a share of the total pot, with 10% fee model, that is:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Pot share</th>
-            <th>Destination</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>90%</td><td>Winner payout</td></tr>
-          <tr><td>5%</td><td>SLIME collateral</td></tr>
-          <tr><td>3%</td><td>Leagues pool</td></tr>
-          <tr><td>2%</td><td>Protocol earnings</td></tr>
-        </tbody>
-      </table>
-      <aside class="callout">
-      The weekly pool can also include unclaimed rewards from the previous weeks pool
-      </aside>
-
       <h2>Ranks</h2>
       <p>Players rank by Slimecoin balance in the public leaderboard. The app maps ranks into tiers:</p>
       <table>
@@ -375,16 +345,17 @@ export const pages = [
           <tr>
             <th>Rank</th>
             <th>League</th>
+            <th>Slime boost</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>1-10</td><td>Diamond</td></tr>
-          <tr><td>11-20</td><td>Emerald</td></tr>
-          <tr><td>21-30</td><td>Gold</td></tr>
-          <tr><td>31-50</td><td>Silver</td></tr>
-          <tr><td>51-80</td><td>Bronze</td></tr>
-          <tr><td>81-300</td><td>Iron</td></tr>
-          <tr><td>301+ or unranked</td><td>Unranked</td></tr>
+          <tr><td>1-10</td><td>Diamond</td><td>+50/hr</td></tr>
+          <tr><td>11-20</td><td>Emerald</td><td>+20/hr</td></tr>
+          <tr><td>21-30</td><td>Gold</td><td>+10/hr</td></tr>
+          <tr><td>31-50</td><td>Silver</td><td>+5/hr</td></tr>
+          <tr><td>51-80</td><td>Bronze</td><td>+3/hr</td></tr>
+          <tr><td>81-300</td><td>Iron</td><td>+1/hr</td></tr>
+          <tr><td>301+ or unranked</td><td>Unranked</td><td>—</td></tr>
         </tbody>
       </table>
     `,

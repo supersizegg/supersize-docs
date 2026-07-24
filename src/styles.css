@@ -534,9 +534,7 @@ h1 {
     radial-gradient(circle at center, var(--panel) 0 40%, transparent 41%),
     conic-gradient(
       var(--gold) 0 90%,
-      var(--green) 90% 95%,
-      var(--blue) 95% 98%,
-      var(--red) 98% 100%
+      var(--red) 90% 100%
     );
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.1),
@@ -579,14 +577,6 @@ h1 {
 
 .legend-swatch.winner {
   background: var(--gold);
-}
-
-.legend-swatch.collateral {
-  background: var(--green);
-}
-
-.legend-swatch.leagues {
-  background: var(--blue);
 }
 
 .legend-swatch.protocol {
