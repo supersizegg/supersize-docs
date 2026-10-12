@@ -118,33 +118,10 @@ export const pages = [
     navTitle: "Gems",
     title: "Gems",
     description:
-      "Gems are the protocol's free-to-play USDC-backed currency.",
+      "Gems are the protocol's free-to-play currency.",
     eyebrow: "Free-play currency",
     content: `
-      <pre><code>1 USDC = 1,000 gems</code></pre>
-
       <h2>How to get gems</h2>
-      <p>Gems are designed as a gamified rakeback system. They give casual players a way to keep playing while scaling up rewards for higher-volume players.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Method</th>
-            <th>How it works</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Claim gems</td>
-            <td>Players produce gems over time based on Slimecoin balance and boosts</td>
-          </tr>
-          <tr>
-            <td>Gem match winnings</td>
-            <td>Winners in gem matches receive claimable gems</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Claiming gems over time</h2>
 
       <p>Players can claim gems for every hour elapsed, up to 24 hours per claim. The rate depends on:</p>
 
@@ -161,14 +138,14 @@ export const pages = [
 
       <h2>Using gems in games</h2>
 
-      <p>Gem matches are useful for low-stakes competition. They work exactly like USDC games, but buy-ins and payouts happen in gems.</p>
+      <p>Gem matches are useful for low-stakes competition. They work like USDC games, but buy-ins and payouts happen in gems.</p>
 
       <aside class="callout">
         <strong>Turn gems into USDC</strong>
         <p>Players can use 1k gems to enter $1 paid matches to win USDC</p>
       </aside>
 
-      <h2>Gems per hour by Slimecoin holdings</h2>
+      <h2>Gems per hour by Slimecoin balance</h2>
 
       <table>
         <thead>
@@ -234,7 +211,7 @@ export const pages = [
     content: `
       <h2>How mining works</h2>
 
-      <p>In a paid USD or Gems match, both players can receive Slimecoin:</p>
+      <p>In a paid USD or gems match, both players can receive Slimecoin:</p>
 
       <ul>
         <li>the winner receives the higher Slimecoin reward</li>
@@ -337,9 +314,7 @@ export const pages = [
     content: `
       <h2>Weekly rankings</h2>
 
-      <p>Players compete by earning Slimecoin during the current week. The weekly score resets after each weekly payout, while players keep their Slimecoin balance. The all-time leaderboard shows total holdings separately.</p>
-
-      <p>To qualify for weekly rewards, earn at least <strong>50 Slimecoin</strong> during the week and finish among the <strong>top 100 qualifying players</strong>. Final weekly rank determines the prize and the gem production bonus for the following week.</p>
+      <p>Players compete by earning Slimecoin during the current week. To qualify for weekly rewards, earn at least <strong>50 Slimecoin</strong> during the week and finish among the <strong>top 100 qualifying players</strong>. Final weekly rank determines the prize and the gem production bonus for the following week.</p>
 
       <h2>Fixed weekly prizes</h2>
 
@@ -362,8 +337,6 @@ export const pages = [
           <tr><td>26-100</td><td>0.75 USDC each</td></tr>
         </tbody>
       </table>
-
-      <p>Each prize can be claimed once. The app shows the current qualification rules and prize ladder for each week.</p>
 
       <h2>League gem boosts</h2>
 
