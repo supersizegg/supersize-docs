@@ -9,7 +9,7 @@ MDX, or a build service. The docs cover:
 - the non-custodial Supersize Vault
 - the Supersize Matchmaking queue program
 - the on-chain game library
-- Slimecoin emissions, SLIME, leagues, and player rewards
+- Slimecoin emissions, Gems, leagues, and player rewards
 
 ## Local preview
 
@@ -43,3 +43,7 @@ by git.
 
 Deploy this directory as a Vercel static site. `index.html` is the root page,
 and each docs route has its own `index.html` entrypoint for direct links.
+
+The free-play currency documentation lives at `/gems/`. Legacy `/slime/` and
+`/tokens/slime/` links redirect to `/gems/` on Vercel. The `/slime/` entrypoint
+also redirects in the local static preview.

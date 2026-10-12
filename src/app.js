@@ -30,7 +30,7 @@ function navMarkup(currentSlug) {
 }
 
 function render(page) {
-  document.title = `${page.title} - Slimecoin Docs`;
+  document.title = "Slimecoin Docs";
 
   const logo = page.heroLogo
     ? `<img class="hero-logo" src="/logo/slimecoinio.png" alt="Slimecoin.io" />`

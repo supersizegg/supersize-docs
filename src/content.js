@@ -28,11 +28,11 @@ export const pages = [
         <tbody>
           <tr>
             <td><strong>USDC</strong></td>
-            <td>Core asset powering paid games and payouts</td>
+            <td>Asset powering paid games and payouts</td>
           </tr>
           <tr>
-            <td><strong>SLIME</strong></td>
-            <td>Free-to-play currency backed by USDC collateral</td>
+            <td><strong>Gems</strong></td>
+            <td>Free-to-play currency</td>
           </tr>
           <tr>
             <td><strong>Slimecoin</strong></td>
@@ -81,15 +81,15 @@ export const pages = [
           <tr>
             <td>Practice</td>
             <td>Free</td>
-            <td>None</td>
+            <td>No match payout</td>
           </tr>
           <tr>
-            <td>SLIME queue</td>
-            <td>Play using SLIME</td>
-            <td>SLIME</td>
+            <td>Gems queue</td>
+            <td>Play using gems</td>
+            <td>Gems + Slimecoin</td>
           </tr>
           <tr>
-            <td>Paid queue</td>
+            <td>Cash queue (mobile)</td>
             <td>Play with USDC stakes</td>
             <td>USDC + Slimecoin</td>
           </tr>
@@ -101,29 +101,30 @@ export const pages = [
       <p>The current on-chain library includes:</p>
 
       <ul class="pill-list">
-        <li>Farm Wars</li>
-        <li>Slime Solitaire</li>
+        <li>Triple Tile</li>
+        <li>Solitaire</li>
         <li>Block Puzzle</li>
-        <li>2048</li>
         <li>Bubble Shooter</li>
-        <li>Match 3</li>
         <li>21 Solitaire</li>
+        <li>Match 3</li>
+        <li>Farm Wars</li>
+        <li>2048</li>
       </ul>
 
     `,
   },
   {
-    slug: "/slime/",
-    navTitle: "Slime",
-    title: "Slime",
+    slug: "/gems/",
+    navTitle: "Gems",
+    title: "Gems",
     description:
-      "Slime is the protocol's free-to-play USDC-backed currency.",
+      "Gems are the protocol's free-to-play USDC-backed currency.",
     eyebrow: "Free-play currency",
     content: `
-      <pre><code>1 USDC = 1,000 SLIME</code></pre>
+      <pre><code>1 USDC = 1,000 gems</code></pre>
 
-      <h2>How to get Slime</h2>
-      <p>Slime is designed as a gamified rakeback system. It gives casual players a way to keep playing while scaling up rewards for higher-volume players.</p>
+      <h2>How to get gems</h2>
+      <p>Gems are designed as a gamified rakeback system. They give casual players a way to keep playing while scaling up rewards for higher-volume players.</p>
       <table>
         <thead>
           <tr>
@@ -133,62 +134,63 @@ export const pages = [
         </thead>
         <tbody>
           <tr>
-            <td>Claim Slime</td>
-            <td>Players produce Slime over time based on Slimecoin balance and boosts</td>
+            <td>Claim gems</td>
+            <td>Players produce gems over time based on Slimecoin balance and boosts</td>
           </tr>
           <tr>
-            <td>Slime match winnings</td>
-            <td>Winners in Slime matches receive claimable Slime</td>
+            <td>Gem match winnings</td>
+            <td>Winners in gem matches receive claimable gems</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>Claiming Slime over time</h2>
+      <h2>Claiming gems over time</h2>
 
-      <p>Players can claim Slime for every hour elapsed, up to 24 hours per claim. The rate depends on:</p>
+      <p>Players can claim gems for every hour elapsed, up to 24 hours per claim. The rate depends on:</p>
 
       <ul>
         <li>Slimecoin balance</li>
-        <li>current Slime Rush boost multiplier</li>
-        <li>production cap for the player's current Slime Rush level</li>
+        <li>league gem bonus from the previous week's final rank</li>
+        <li>current Gem Rush boost multiplier</li>
+        <li>production cap for the player's current Gem Rush level</li>
       </ul>
 
-      <p>The vault enforces the cap using the player's total SLIME inventory:</p>
+      <p>The vault enforces the cap using the player's total gem inventory.</p>
 
-      <p>If inventory is already at the current production cap, new SLIME production is capped at zero until the player spends or raises the cap.</p>
+      <p>If inventory is already at the current production cap, new gem production is capped at zero until the player spends or raises the cap.</p>
 
-      <h2>Using Slime in games</h2>
+      <h2>Using gems in games</h2>
 
-      <p>Slime matches are useful for low-stakes competition. They work exactly like USDC games, but buy-ins and payouts happen in Slime.</p>
+      <p>Gem matches are useful for low-stakes competition. They work exactly like USDC games, but buy-ins and payouts happen in gems.</p>
 
       <aside class="callout">
-        <strong>Turn SLIME into USDC</strong>
-        <p>Players can use 1k SLIME to enter $1 paid matches to win USDC</p>
+        <strong>Turn gems into USDC</strong>
+        <p>Players can use 1k gems to enter $1 paid matches to win USDC</p>
       </aside>
 
-      <h2>Slime/hr production by Slimecoin holdings</h2>
+      <h2>Gems per hour by Slimecoin holdings</h2>
 
       <table>
         <thead>
           <tr>
             <th>Slimecoin held</th>
-            <th>Hourly SLIME production</th>
+            <th>Hourly gem production</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>0</td><td>1 SLIME</td></tr>
-          <tr><td>25</td><td>2 SLIME</td></tr>
-          <tr><td>50</td><td>3 SLIME</td></tr>
-          <tr><td>2525</td><td>4 SLIME</td></tr>
-          <tr><td>5000</td><td>5 SLIME</td></tr>
+          <tr><td>0</td><td>1 gem</td></tr>
+          <tr><td>25</td><td>2 gems</td></tr>
+          <tr><td>50</td><td>3 gems</td></tr>
+          <tr><td>2525</td><td>4 gems</td></tr>
+          <tr><td>5000</td><td>5 gems</td></tr>
         </tbody>
       </table>
 
-      <h2>Slime Rush</h2>
+      <h2>Gem Rush</h2>
 
-      <p>Slime Rush is the weekly activity system attached to Slime production.</p>
+      <p>Gem Rush is the weekly activity system attached to gem production.</p>
 
-      <p>As players generate weekly gameplay volume, they can claim milestones. Each claimed milestone increases the Slime production multiplier and raises the inventory cap.</p>
+      <p>As players generate weekly gameplay volume, they can claim milestones. Each claimed milestone increases the gem production multiplier and raises the inventory cap.</p>
 
       <h3>Weekly milestones</h3>
 
@@ -197,28 +199,28 @@ export const pages = [
           <tr>
             <th>Level</th>
             <th>Weekly volume target</th>
-            <th>SLIME production boost</th>
+            <th>Gem production boost</th>
             <th>Production cap</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>0</td><td>$0</td><td>0%</td><td>300 SLIME</td></tr>
-          <tr><td>1</td><td>$0.10</td><td>5%</td><td>450 SLIME</td></tr>
-          <tr><td>2</td><td>$0.25</td><td>10%</td><td>675 SLIME</td></tr>
-          <tr><td>3</td><td>$0.50</td><td>15%</td><td>1,000 SLIME</td></tr>
-          <tr><td>4</td><td>$1</td><td>20%</td><td>1,500 SLIME</td></tr>
-          <tr><td>5</td><td>$2</td><td>25%</td><td>2,250 SLIME</td></tr>
-          <tr><td>6</td><td>$4</td><td>30%</td><td>3,500 SLIME</td></tr>
-          <tr><td>7</td><td>$8</td><td>40%</td><td>5,000 SLIME</td></tr>
-          <tr><td>8</td><td>$16</td><td>60%</td><td>7,500 SLIME</td></tr>
-          <tr><td>9</td><td>$32</td><td>80%</td><td>10,000 SLIME</td></tr>
-          <tr><td>10</td><td>$64</td><td>100%</td><td>15,000 SLIME</td></tr>
+          <tr><td>0</td><td>$0</td><td>0%</td><td>300 gems</td></tr>
+          <tr><td>1</td><td>$0.10</td><td>5%</td><td>450 gems</td></tr>
+          <tr><td>2</td><td>$0.25</td><td>10%</td><td>675 gems</td></tr>
+          <tr><td>3</td><td>$0.50</td><td>15%</td><td>1,000 gems</td></tr>
+          <tr><td>4</td><td>$1</td><td>20%</td><td>1,500 gems</td></tr>
+          <tr><td>5</td><td>$2</td><td>25%</td><td>2,250 gems</td></tr>
+          <tr><td>6</td><td>$4</td><td>30%</td><td>3,500 gems</td></tr>
+          <tr><td>7</td><td>$8</td><td>40%</td><td>5,000 gems</td></tr>
+          <tr><td>8</td><td>$16</td><td>60%</td><td>7,500 gems</td></tr>
+          <tr><td>9</td><td>$32</td><td>80%</td><td>10,000 gems</td></tr>
+          <tr><td>10</td><td>$64</td><td>100%</td><td>15,000 gems</td></tr>
         </tbody>
       </table>
 
       <h3>How volume is counted</h3>
 
-      <p>USDC matches add the buy-in amount. Slime matches add the USD-equivalent amount based on the 1 USDC = 1,000 SLIME conversion.</p>
+      <p>USDC matches add the buy-in amount. Gem matches add the USD-equivalent amount based on the 1 USDC = 1,000 gems conversion.</p>
       </div>
     `,
   },
@@ -227,17 +229,17 @@ export const pages = [
     navTitle: "Slimecoin",
     title: "Slimecoin",
     description:
-      "The play-to-mine token emitted from real USDC gameplay volume with supply-linked halvings.",
+      "The play-to-mine token emitted from gameplay volume with supply-linked halvings.",
     eyebrow: "Play-to-mine token",
     content: `
       <h2>How mining works</h2>
 
-      <p>In a paid USD match, both players can receive Slimecoin:</p>
+      <p>In a paid USD or Gems match, both players can receive Slimecoin:</p>
 
       <ul>
         <li>the winner receives the higher Slimecoin reward</li>
         <li>the loser receives the lower participation reward (10% of what the winner receives)</li>
-        <li>both rewards scale with the USD buy-in</li>
+        <li>both rewards scale with the buy-in</li>
         <li>both rewards halve as the remaining mineable supply crosses halving thresholds</li>
       </ul>
 
@@ -319,42 +321,77 @@ export const pages = [
         </svg>
       </div>
 
-      <h2>Practice quest mining</h2>
+      <h2>Practice mining</h2>
 
-      <p>Players can claim Slimecoin for each of their first 10 practice wins, receiving the lower per-USD Slimecoin rate for each win. This gives new players a path to touch Slimecoin before entering USDC matches.</p>
+      <p>Players can claim Slimecoin for each of their first 10 practice wins, receiving the lower per-USD Slimecoin rate for each win.</p>
     `,
   },
   {
     slug: "/leagues/",
     navTitle: "Leagues",
     title: "Leagues",
-    description: "A permanent leaderboard with a weekly prize pool.",
+    description: "Weekly rankings with fixed prizes and gem production boosts.",
     eyebrow: "Weekly competition",
+    // Eligibility and reward bands verified against /api/v1/leagues/weekly on
+    // https://supersize.miso.one on 2026-10-12.
     content: `
+      <h2>Weekly rankings</h2>
 
-      <h2>Weekly USDC payouts</h2>
-      <p>Every week players can claim a USDC prize proportional to their Slimecoin holdings. For example, if a player holds 10% of the active Slimecoin supply, they are entitled to 10% of the prize pool.</p>      
+      <p>Players compete by earning Slimecoin during the current week. The weekly score resets after each weekly payout, while players keep their Slimecoin balance. The all-time leaderboard shows total holdings separately.</p>
 
-      <h2>Ranks</h2>
-      <p>Players rank by Slimecoin balance in the public leaderboard. At the start of each week players earn a Slime boost based on their rank. The app maps ranks into tiers:</p>
+      <p>To qualify for weekly rewards, earn at least <strong>50 Slimecoin</strong> during the week and finish among the <strong>top 100 qualifying players</strong>. Final weekly rank determines the prize and the gem production bonus for the following week.</p>
+
+      <h2>Fixed weekly prizes</h2>
+
+      <p>Each qualifying player receives the fixed USDC prize for their finishing position.</p>
+
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>League</th>
-            <th>Slime boost</th>
+            <th>Final weekly rank</th>
+            <th>USDC prize</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>1-10</td><td>Diamond</td><td>+50/hr</td></tr>
-          <tr><td>11-20</td><td>Emerald</td><td>+20/hr</td></tr>
-          <tr><td>21-30</td><td>Gold</td><td>+10/hr</td></tr>
-          <tr><td>31-50</td><td>Silver</td><td>+5/hr</td></tr>
-          <tr><td>51-80</td><td>Bronze</td><td>+3/hr</td></tr>
-          <tr><td>81-300</td><td>Iron</td><td>+1/hr</td></tr>
-          <tr><td>301+ or unranked</td><td>Unranked</td><td>—</td></tr>
+          <tr><td>1</td><td>40 USDC</td></tr>
+          <tr><td>2</td><td>25 USDC</td></tr>
+          <tr><td>3</td><td>18 USDC</td></tr>
+          <tr><td>4-6</td><td>9 USDC each</td></tr>
+          <tr><td>7-10</td><td>6 USDC each</td></tr>
+          <tr><td>11-25</td><td>3 USDC each</td></tr>
+          <tr><td>26-100</td><td>0.75 USDC each</td></tr>
         </tbody>
       </table>
+
+      <p>Each prize can be claimed once. The app shows the current qualification rules and prize ladder for each week.</p>
+
+      <h2>League gem boosts</h2>
+
+      <p>Qualifying players also receive an hourly gem production bonus for the following week, based on their final weekly rank:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Final weekly rank</th>
+            <th>League</th>
+            <th>Extra gems per hour</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1-10</td><td>Diamond</td><td>+50</td></tr>
+          <tr><td>11-20</td><td>Emerald</td><td>+20</td></tr>
+          <tr><td>21-30</td><td>Gold</td><td>+10</td></tr>
+          <tr><td>31-50</td><td>Silver</td><td>+5</td></tr>
+          <tr><td>51-80</td><td>Bronze</td><td>+3</td></tr>
+          <tr><td>81-100</td><td>Iron</td><td>+1</td></tr>
+        </tbody>
+      </table>
+
+      <p>The league bonus is added to the player's base hourly gem rate before the Gem Rush multiplier is applied. The usual <a href="/gems/">gem production cap and claiming rules</a> still apply. Players below the qualifying threshold or outside the top 100 receive no weekly prize or league gem bonus.</p>
+
+      <h2>Claiming rewards</h2>
+
+      <p>After weekly results are finalized, claim the prize from Leagues during the following week. Unclaimed prizes expire at the next weekly rollover. The hourly gem bonus applies during that reward week and is collected with regular gem production.</p>
     `,
   },
   {
@@ -375,7 +412,7 @@ export const pages = [
 
       <h2>Non-custodial funds</h2>
 
-      <p>Player balances live in a non-custodial vault. The vault tracks each player's USDC, SLIME, Slimecoin, locked buy-ins, and claimable rewards through program-derived accounts.</p>
+      <p>Player balances live in a non-custodial vault. The vault tracks each player's USDC, gems, Slimecoin, locked buy-ins, and claimable rewards through program-derived accounts.</p>
 
       <p>Funds are not held in a game server wallet. The vault can only move balances through protocol rules: reserve a buy-in, refund a draw or timeout, credit winnings, or let the player claim rewards.</p>
 
@@ -401,7 +438,8 @@ export const aliases = {
   "/index": "/",
   "/index/": "/",
   "/about-slimecoin-io/games/": "/games/",
-  "/tokens/slime/": "/slime/",
+  "/slime/": "/gems/",
+  "/tokens/slime/": "/gems/",
   "/tokens/slimecoin/": "/slimecoin/",
   "/rewards/leagues/": "/leagues/",
   "/about-slimecoin-io/tech/": "/fairness-security/",

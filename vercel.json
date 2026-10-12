@@ -16,13 +16,23 @@
       "permanent": true
     },
     {
+      "source": "/slime",
+      "destination": "/gems/",
+      "permanent": true
+    },
+    {
+      "source": "/slime/",
+      "destination": "/gems/",
+      "permanent": true
+    },
+    {
       "source": "/tokens/slime",
-      "destination": "/slime/",
+      "destination": "/gems/",
       "permanent": true
     },
     {
       "source": "/tokens/slime/",
-      "destination": "/slime/",
+      "destination": "/gems/",
       "permanent": true
     },
     {

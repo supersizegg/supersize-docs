@@ -10,6 +10,7 @@ const outputDirectory = path.join(root, "public");
 const staticEntries = [
   "index.html",
   "games",
+  "gems",
   "slime",
   "slimecoin",
   "leagues",
